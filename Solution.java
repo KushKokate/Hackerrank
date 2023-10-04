@@ -1,28 +1,27 @@
-import java.util.Scanner;
-
-public class Solution {
-
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int queries = scanner.nextInt();
-
-        for (int i = 0; i < queries; i++) {
-            int a = scanner.nextInt();
-            int b = scanner.nextInt();
-            int n = scanner.nextInt();
-
-            printSeries(a, b, n);
-        }
-
-        scanner.close();
+class Animal{
+    void walk(){
+        System.out.println("I am walking");
     }
+}
 
-    public static void printSeries(int a, int b, int n) {
-        int term = a;
-        for (int i = 0; i < n; i++) {
-            term += Math.pow(2, i) * b;
-            System.out.print(term + " ");
-        }
-        System.out.println();
+class Bird extends Animal{
+    void fly(){
+        System.out.println("I am flying");
+    }
+    void sing(){
+        System.out.println("I am singing");
+    }
+}
+
+
+public class Solution{
+
+    public static void main(String args[]){
+
+        Bird bird = new Bird();
+        bird.walk();
+        bird.fly();
+        bird.sing();
+
     }
 }
